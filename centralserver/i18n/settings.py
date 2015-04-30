@@ -40,3 +40,5 @@ I18N_CENTRAL_DATA_PATH = os.path.join(os.path.dirname(__file__), "data")
 # But that seems to be gone now, so we just don't fetch any dubbed
 # video data from their API.
 DUBBED_LANGUAGES_FETCHED_IN_API = [] # ["es", "fr"]
+
+KA_DUBBED_LANGUAGES_URL = "http://www.khanacademy.org/api/internal/videos/localized/all"
