@@ -1,8 +1,6 @@
 import logging
 import os
 import platform
-from fle_utils.settingshelper import import_installed_app_settings
-
 
 ##############################
 # Basic setup
@@ -168,10 +166,6 @@ CACHE_TIME = 0
 CACHE_NAME = None
 CENTRAL_SERVER_HOST = ""
 
-import_installed_app_settings(INSTALLED_APPS, globals())
-
-TEST_RUNNER = CENTRALSERVER_TEST_RUNNER
-
 RUNNING_IN_TRAVIS = bool(os.environ.get("TRAVIS"))
 
 # LOG.debug("======== MIDDLEWARE ========")
@@ -202,3 +196,9 @@ POSTMARK_API_KEY = getattr(local_settings, "POSTMARK_API_KEY", "")
 
 # Whether this was built by a build server; it's not.
 BUILT = getattr(local_settings, "BUILT", False)
+
+from kalite.settings.base import *
+# from centralserver.testing.settings import *
+# from kalite.i18n.settings import *
+
+# TEST_RUNNER = CENTRALSERVER_TEST_RUNNER
